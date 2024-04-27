@@ -1,0 +1,17 @@
+.formparent{
+    background-color: rgb(250, 236, 211);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.mynav{
+    background-color: rgb(237, 247, 255);
+    box-shadow: rgb(120, 120, 120) 0px 1px 3px 0px;
+}
+
+.formrow{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
