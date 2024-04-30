@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+.mynav{
+    background-color: #26263d;
+    color: white;
+    height:100px;
+    box-shadow: rgb(124, 124, 124) 0px 1px 5px 0px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+.flx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-me-text{
+    color: white;
+}
+
+.logo{
+    margin-right: 15px;
+}

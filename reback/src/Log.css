@@ -1,17 +1,20 @@
 .formparent{
-    background-color: rgb(250, 236, 211);
+    background-color: #26263d;
+    width: 400px;
     padding: 20px;
     border-radius: 10px;
 }
 
-.mynav{
-    background-color: rgb(237, 247, 255);
-    box-shadow: rgb(120, 120, 120) 0px 1px 3px 0px;
+label{
+    color:white;
 }
 
 .formrow{
-    height: 100vh;
+    height: 85.58vh;
+    margin: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #07071c;
+    margin-top: 100px;
 }

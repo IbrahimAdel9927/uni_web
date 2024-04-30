@@ -1,8 +1,39 @@
 .dashparent{
-    height: 100vh;
+    height: 85.58vh;
     width: 100%;
-    background-color: beige;
+    background-color: #07071c;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
+}
+
+.formdash{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formdashparent{
+    background-color: #26263d;
+
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.flx{
+    display: flex;;
+}
+
+.pading{
+    padding: 50px;
+}
+
+.inputnotbyttom{
+    margin-bottom: 50px;
+}
+
+label{
+    color:white;
 }

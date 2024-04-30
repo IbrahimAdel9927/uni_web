@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->char('first_name',60);
-            $table->char('last_name',60);
-            $table->char('email',60)->unique();
+            $table->char('name',60);
+            $table->char('gender',60)->default('');
+            $table->char('birth_date',60)->default('');
+            $table->char('dept_id',60)->default('');
+            $table->char('GPA',60)->default('');
+            $table->char('email',60);
+            $table->char('years_of_study',60)->default('');
+            $table->char('credits',60)->default('');
             $table->string('password');
             $table->timestamps();
         });

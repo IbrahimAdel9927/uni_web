@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 import "./Log.css";
 
@@ -10,6 +12,7 @@ const Signup = () => {
     const[fullname, setName] = useState("");
     const[useremail, setEmail] = useState("");
     const[userpassword, setPassword] = useState("");
+    const navigate = useNavigate();
 
 
 
@@ -24,7 +27,7 @@ const Signup = () => {
 
         let item = {name, email, password}
 
-        fetch("http://localhost:8000/api/usersignup",{
+        fetch("http://localhost:8000/api/usersignupp",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
@@ -35,8 +38,9 @@ const Signup = () => {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            if(data.token){
-                alert(data.message);
+            if(data){
+                // alert("succseeful");
+                navigate('/dashbord', { state: data});
             }
             else{
                 alert("TRY AGAIN!");

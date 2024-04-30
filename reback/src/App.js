@@ -6,6 +6,7 @@ import Log from './Log';
 import Dashbord from './Dashbord';
 import LogNavbar from './LogNavbar';
 import Signup from './Signup';
+import Navbar from './Navbar';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <BrowserRouter>
         <LogNavbar/>
         <Routes>
+          <Route path='/' element={<Log/>}/>
           <Route path='/login' element={<Log/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/dashbord' element={<Dashbord/>}/>

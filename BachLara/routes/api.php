@@ -12,7 +12,13 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/usersignup', [authcontroller::class, 'signup']);
 
+Route::post('/usersignupp', [studentcontroller::class, 'signup']);
+
 Route::post('/userlogin', [authcontroller::class, 'login']);
+
+Route::post('/userloginnn/{id}', [studentcontroller::class, 'showdash']);
+
+Route::post('/userloginn', [studentcontroller::class, 'showstu']);
 
 Route::post('/students', [studentcontroller::class, 'create']);
 

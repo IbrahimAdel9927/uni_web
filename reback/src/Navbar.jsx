@@ -8,7 +8,7 @@ import "./LogNavbar.css";
 const LogNavbar = () => {
   return (
     <>
-        <nav className="col-12 navbar navbar-expand-lg mynav">
+        <nav className="navbar navbar-expand-lg mynav">
             <div className="container-fluid container">
                 <div className='flx col-3'>
                     <Link className="navbar-brand" to="/">
@@ -18,14 +18,22 @@ const LogNavbar = () => {
                         </div>
                     </Link>
                 </div>
+                <div className="col-4 row " id="navbarSupportedContent">
+                    <div className="col-4">
+                        <Link className="nav-link" to="/">Home</Link>
+                    </div>
+                    <div className="col-4">
+                        <Link className="nav-link" to="/">Link</Link>
+                    </div>
+                    <div className="col-4">
+                        <Link className="nav-link" to="/">Disabled</Link>
+                    </div>
+                </div>
                 <div className='col-5'>
                     <div className='row'>
                         <div className='col-8'></div>
                         <div className="col-2">
-                            <Link className="nav-link" to="/login">Login</Link>
-                        </div>
-                        <div className="col-2">
-                            <Link className="nav-link" to="/signup">Signup</Link>
+                            <Link className="nav-link" to="/signup">Logout</Link>
                         </div>
                     </div>
                 </div>
