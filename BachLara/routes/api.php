@@ -18,12 +18,14 @@ Route::post('/userlogin', [authcontroller::class, 'login']);
 
 Route::post('/userloginnn/{id}', [studentcontroller::class, 'showdash']);
 
+Route::post('/userloginnnn/{male}', [studentcontroller::class, 'showstugen']);
+
 Route::post('/userloginn', [studentcontroller::class, 'showstu']);
 
 Route::post('/students', [studentcontroller::class, 'create']);
 
 Route::get('/students',[StudentController::class,'show']);
 
-Route::put('/students',[StudentController::class,'update']);
+Route::post('/userupdate/{id}',[StudentController::class,'update']);
 
 Route::delete('/students/{id}',[StudentController::class,'delete']);

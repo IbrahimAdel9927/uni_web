@@ -10,9 +10,9 @@ const LogNavbar = () => {
     <>
         <nav className="col-12 navbar navbar-expand-lg mynav">
             <div className="container-fluid container">
-                <div className='flx col-3'>
+                <div className='nlogo col-3'>
                     <Link className="navbar-brand" to="/">
-                        <div className="flx nlogo">
+                        <div className="nlogo">
                             <img className='logo' src={logo} alt="uni" width={50} />
                             <div className='nav-me-text' to="/">Port Said<br/>University</div>
                         </div>
@@ -22,10 +22,10 @@ const LogNavbar = () => {
                     <div className='row'>
                         <div className='col-8'></div>
                         <div className="col-2">
-                            <Link className="nav-link" to="/login">Login</Link>
+                            <Link className="nav-link link" to="/login">Login</Link>
                         </div>
                         <div className="col-2">
-                            <Link className="nav-link" to="/signup">Signup</Link>
+                            <Link className="nav-link link" to="/signup">Signup</Link>
                         </div>
                     </div>
                 </div>

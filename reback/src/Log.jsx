@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 // import { Route, Redirect } from "react-router-dom";
 
+import LogNavbar from './LogNavbar';
 import "./Log.css";
 
 const Log = () => {
@@ -29,10 +30,12 @@ const Log = () => {
                 "Accept":"application/json"
             },
             body: JSON.stringify(item)
+
         })
+
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
+            console.log(data.message);
             // console.log(data.token.id);
             // console.log(data.token.name);
             // console.log(data.token.email);
@@ -41,8 +44,7 @@ const Log = () => {
                 navigate('/dashbord', { state: data});
             }
             else{
-                alert("TRY AGAIN!");
-                console.log("1");
+                alert();
             }
             
         })
@@ -50,6 +52,7 @@ const Log = () => {
 
     return (
         <>
+            <LogNavbar/>
             <div className='col-12 row formrow'>
                 <div className="col-3"></div>
                 <div className="formparent col-6">

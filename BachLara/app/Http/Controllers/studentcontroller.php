@@ -77,6 +77,7 @@ class studentcontroller extends Controller
 
     public function update(Request $request){
         Student::where('id','=', $request->id)->update([
+            "id" => $request->id,
             "name" => $request->name,
             "email" => $request->email,
             "gender" => $request->gender,
@@ -86,14 +87,18 @@ class studentcontroller extends Controller
             "years_of_study" => $request->years_of_study,
             "credits" => $request->credits
         ]);
+        $student = Student::find($request->id);
 
-        return response()->json([
-            'message' => 'success'
-        ]);
+        return $student;
     }
 
     function showdash($id){
         $student = Student::where("id" , "=" , $id) ->get();
+        return $student;
+    }
+
+    function showstugen($male){
+        $student = Student::where("gender" , "=" , $male) ->get();
         return $student;
     }
 }

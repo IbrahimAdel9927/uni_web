@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <LogNavbar/>
+        {/* <LogNavbar/> */}
         <Routes>
           <Route path='/' element={<Log/>}/>
           <Route path='/login' element={<Log/>}/>

@@ -1,5 +1,5 @@
 .dashparent{
-    height: 85.58vh;
+    /* height: 85.58vh; */
     width: 100%;
     background-color: #07071c;
     display: flex;
@@ -17,13 +17,13 @@
 
 .formdashparent{
     background-color: #26263d;
-
+    margin: 46.5px 0px;
     padding: 20px;
     border-radius: 10px;
 }
 
 .flx{
-    display: flex;;
+    display: flex;
 }
 
 .pading{
@@ -36,4 +36,18 @@
 
 label{
     color:white;
+}
+
+/* @media (max-width: 576px) {
+    .dashparent {
+      height: 200vh; 
+    }
+  } */
+
+.link{
+    color: rgb(144, 142, 142);
+}
+
+.link:hover{
+    color: white;
 }
