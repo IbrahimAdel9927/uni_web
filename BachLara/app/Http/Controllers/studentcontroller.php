@@ -101,4 +101,12 @@ class studentcontroller extends Controller
         $student = Student::where("gender" , "=" , $male) ->get();
         return $student;
     }
+
+    public function delete($id){
+        Student::where('id','=', $id)->delete();
+
+        return response()->json([
+            'message' => 'success'
+        ]);
+    }
 }

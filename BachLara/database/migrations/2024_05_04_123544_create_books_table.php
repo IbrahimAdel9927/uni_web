@@ -21,7 +21,6 @@ return new class extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
             $table->char('category_name',60);
             $table->char('posterurl',60);
-            // $table->foreign('stu_id')->references('id')->on('students');
             $table->timestamps();
         });
     }

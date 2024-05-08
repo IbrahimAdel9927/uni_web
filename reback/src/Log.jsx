@@ -31,23 +31,22 @@ const Log = () => {
                 "Accept":"application/json"
             },
             body: JSON.stringify(item)
-
         })
-
         .then(response => response.json())
         .then(data => {
             // console.log(data.message);
             // console.log(data.token.id);
             // console.log(data.token.name);
             // console.log(data.token.email);
-            if(data){
-                url=url+data.id;
+            console.log(data);
+            if(data.token){
+                url=url+data.token.id;
                 // console.log(url);
                 // this.history.push("/dashbord");
                 navigate(url);
             }
             else{
-                alert("Try Again");
+                alert(data.data);
             }
             
         })
