@@ -1,7 +1,8 @@
 .dashparent{
     /* height: 85.58vh; */
     width: 100%;
-    background-color: #07071c;
+    /* background-color: #07071c; */
+    background-image: linear-gradient(#07071c, rgb(87, 1, 119));
     display: flex;
     justify-content: center;
     align-items: center;

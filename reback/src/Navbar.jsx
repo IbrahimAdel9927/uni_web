@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom'
 import logo from './images/logo_uni.png';
 
 
+
 import "./LogNavbar.css";
 
-const LogNavbar = () => {
+const Navbar = () => {
+    // console.log(idd+"iddd");
+
   return (
     <>
         <nav className="col-12 navbar navbar-expand-lg mynav">
             <div className="container-fluid container navparent">
-                <div className='nlogo '>
+                <div className='col-3 nlogo '>
                 {/* col-4 */}
                     <Link className="navbar-brand" to="/">
                         <div className="nlogo">
@@ -19,22 +22,19 @@ const LogNavbar = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="col-4 row " id="navbarSupportedContent">
+                <div className="col-9 row " id="navbarSupportedContent">
                 {/* col-4 */}
-                    <div className="col-4">
-                        <Link className="nav-link link" to="/">Home</Link>
+                    <div className="col-3 linkparent">
+                        <Link className="nav-link link" to='/dashbord'>Dashboard</Link>
                     </div>
-                    <div className="col-4">
-                        <Link className="nav-link link" to="/">Link</Link>
+                    <div className="col-3 linkparent">
+                        <Link className="nav-link link" to="/library" aria-disabled="true">Library</Link>
                     </div>
-                    <div className="col-4">
-                        <Link className="nav-link link" to="/">Disabled</Link>
+                    <div className="col-3 linkparent">
+                        <Link className="nav-link link" to="/universitycity">University City</Link>
                     </div>
-                </div>
-                <div className=''>
-                {/* col-4 */}
-                    <div className=''>
-                            <Link className="nav-link link" to="/signup">Logout</Link>
+                    <div className='col-3 linkparent'>
+                            <Link className="nav-link link" to="/">Logout</Link>
                     </div>
                 </div>
             </div>
@@ -43,4 +43,4 @@ const LogNavbar = () => {
   )
 }
 
-export default LogNavbar
+export default Navbar

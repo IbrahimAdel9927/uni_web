@@ -14,6 +14,8 @@ const Signup = () => {
     const[useremail, setEmail] = useState("");
     const[userpassword, setPassword] = useState("");
     const navigate = useNavigate();
+    var url = '/dashbord?data=';
+
 
 
 
@@ -41,7 +43,9 @@ const Signup = () => {
             console.log(data);
             if(data){
                 // alert("succseeful");
-                navigate('/dashbord', { state: data});
+                // navigate('/dashbord', { state: data});
+                url=url+data.id;
+                navigate(url);
             }
             else{
                 alert("TRY AGAIN!");
@@ -63,7 +67,7 @@ const Signup = () => {
                             value={fullname}
                             className="form-control" id="fullname" aria-describedby="emailHelp"
                             onChange={(e) => setName(e.target.value)} 
-                            />
+                            required/>
                     </div>
                     {/* <div className="mb-3">
                         <label  className="form-label">Last Name</label>

@@ -12,6 +12,7 @@ const Log = () => {
     const[useremail, setEmail] = useState("");
     const[userpassword, setPassword] = useState("");
     const navigate = useNavigate();
+    var url = '/dashbord?data=';
 
 
     const login = (event) => {
@@ -35,21 +36,22 @@ const Log = () => {
 
         .then(response => response.json())
         .then(data => {
-            console.log(data.message);
+            // console.log(data.message);
             // console.log(data.token.id);
             // console.log(data.token.name);
             // console.log(data.token.email);
             if(data){
+                url=url+data.id;
+                // console.log(url);
                 // this.history.push("/dashbord");
-                navigate('/dashbord', { state: data});
+                navigate(url);
             }
             else{
-                alert();
+                alert("Try Again");
             }
             
         })
     }
-
     return (
         <>
             <LogNavbar/>

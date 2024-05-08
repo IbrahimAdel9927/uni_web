@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\student;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 
 
 
@@ -93,7 +93,7 @@ class studentcontroller extends Controller
     }
 
     function showdash($id){
-        $student = Student::where("id" , "=" , $id) ->get();
+        $student = Student::where("id" , "=" , $id) ->first();
         return $student;
     }
 

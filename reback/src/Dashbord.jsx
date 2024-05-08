@@ -1,14 +1,21 @@
 import React from 'react'
 import { useState , useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import logo from './images/logo_uni.png';
 
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 import "./Dashbord.css";
+import "./LogNavbar.css";
+
 
 const Dashbord = () => {
 
     const location = useLocation();
-    const mydata = location.state;
+    const searchParams = new URLSearchParams(location.search);
+    const dataString = searchParams.get('data');
+    console.log(dataString);///////////////////////////////////important
+    // const mydata = location.state;
 
     const[username,setName] = useState(" ");
     // const[userpassword,setPassword] = useState(" ");
@@ -20,6 +27,8 @@ const Dashbord = () => {
     const[userbirthdate, setDate] = useState(" ");
     const[usergender, setGender] = useState(" ");
     const[usercredits, setCredits] = useState(" ");
+    var urll='/library?data=';
+    var durl='/dashbord?data=';
 
 
     console.log(username+' '+useremail+' '+userid+' '+useryearofstudy+' '+usergpa+' '+userdeptid+' '+userbirthdate+' '+usergender+' '+usercredits);
@@ -28,7 +37,7 @@ const Dashbord = () => {
 
         // let item = {email}
         var url = "http://localhost:8000/api/userloginnn/";
-        url=url+mydata.id;
+        url=url+dataString;
         // console.log(url);
         fetch(url,{
             method:"POST",
@@ -43,15 +52,15 @@ const Dashbord = () => {
             // console.log(data);
             if(data){
                 // alert("success")
-                setName(data[0].name);
-                setEmail(data[0].email);
-                setGender(data[0].gender);
-                setGPA(data[0].GPA);
-                setCredits(data[0].credits);
-                setDate(data[0].birth_date);
-                setDept_id(data[0].dept_id);
-                setYear(data[0].years_of_study);
-                setId(data[0].id);
+                setName(data.name);
+                setEmail(data.email);
+                setGender(data.gender);
+                setGPA(data.GPA);
+                setCredits(data.credits);
+                setDate(data.birth_date);
+                setDept_id(data.dept_id);
+                setYear(data.years_of_study);
+                setId(data.id);
                 
             }
             else{
@@ -62,6 +71,7 @@ const Dashbord = () => {
 
     useEffect(() => {
         save(); 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []); 
 
     const update = (event) => {
@@ -78,7 +88,7 @@ const Dashbord = () => {
         var GPA = usergpa;
 
         var url = "http://localhost:8000/api/userupdate/";
-        url=url+mydata.id;
+        url=url+dataString;
 
 
         let item = {email, id, credits, gender, dept_id, years_of_study, birth_date, name, GPA}
@@ -103,11 +113,41 @@ const Dashbord = () => {
             
         })
     }
-
+    urll+=dataString;
+    durl+=dataString;
+    // console.log(urll);
 
   return (
     <>
-        <Navbar/>
+        <nav className="col-12 navbar navbar-expand-lg mynav">
+            <div className="container-fluid container navparent">
+                <div className='col-3 nlogo '>
+                    <Link className="navbar-brand" to="/">
+                        <div className="nlogo">
+                            <img className='logo' src={logo} alt="uni" width={50} />
+                            <div className='nav-me-text' to="/">Port Said<br/>University</div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-9 row " id="navbarSupportedContent">
+
+                <div className="col-3 linkparent">
+                        <Link className="nav-link link" to={durl}>Dashboard</Link>
+                    </div>
+                    <div className="col-3 linkparent">
+                        <Link className="nav-link link" to={urll}>Library</Link>
+                    </div>
+                    <div className="col-3 linkparent">
+                        <Link className="nav-link link" to="/universitycity">University City</Link>
+                    </div>
+                    <div className='col-3 linkparent'>
+                            <Link className="nav-link link" to="/">Logout</Link>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {/* <Navbar id={userid}/> */}
+        {/* ///////////////////////////////////////////////////////////// */}
         <div className="dashparent">
         <div className="formdashparent flx col-10">
             <form className="col-12 formdash" onSubmit={update}>
@@ -121,7 +161,7 @@ const Dashbord = () => {
                             className="form-control inputnotbyttom" readOnly required/>
                         </div>
                         <div className="mb-3">
-                            <label className="form-label">Department ID</label>
+                            <label className="form-label">Department Name</label>
                             <input type="text"
                             value={userdeptid}
                             onChange={(e) => setDept_id(e.target.value)}
